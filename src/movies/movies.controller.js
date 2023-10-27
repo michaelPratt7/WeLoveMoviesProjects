@@ -27,9 +27,14 @@ async function moviesByTheater(req, res, next) {
     res.json({data: await service.moviesByTheater(res.locals.movie.movie_id)});
 }
 
+async function reviewsByMovie(req, res, next) {
+    res.json({data: await service.reviewsByMovie(res.locals.movie.movie_id)});
+}
+
 
 module.exports = {
     list: [asyncErrorBoundary(list)],
     read: [asyncErrorBoundary(movieExists), read],
     moviesByTheater: [asyncErrorBoundary(movieExists), moviesByTheater],
+    reviewsByMovie: [asyncErrorBoundary(movieExists), reviewsByMovie],
 }
