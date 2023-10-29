@@ -5,7 +5,7 @@ const {DATABASE_URL} = process.env;
 module.exports = {
   development: {
     client: "postgresql",
-    connection: DATABASE_URL,
+    connection: "postgres://wpkabeou:B7ngkPMECqBNN9NXZ8sHbJD-9MINr5_w@suleiman.db.elephantsql.com/wpkabeou",
     pool: { min: 0, max: 5 },
     migrations: {
       directory: path.join(__dirname, "src", "db", "migrations"),
@@ -17,7 +17,7 @@ module.exports = {
 
   production: {
     client: "postgresql",
-    connection: DATABASE_URL,
+    connection: "postgres://wpkabeou:B7ngkPMECqBNN9NXZ8sHbJD-9MINr5_w@suleiman.db.elephantsql.com/wpkabeou",
     pool: { min: 0, max: 5 },
     migrations: {
       directory: path.join(__dirname, "src", "db", "migrations"),
